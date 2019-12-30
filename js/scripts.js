@@ -83,6 +83,8 @@ function Pizza(pizzaSize, cheese) {
     var pizzaSize = $('input[name="pie-size"]:checked').val();
     var cheese = $('input[name="cheese-options"]:checked').val();
     var newPizza = new Pizza(pizzaSize, cheese);
+    
+    var meatToppings=[];
     $('input[name="meat-toppings"]:checked').each(function() {
       newPizza.addMeat($(this).val());
     });
@@ -145,7 +147,7 @@ function Pizza(pizzaSize, cheese) {
     $('.order-information-input form').submit(function(event) {
       event.preventDefault();
       customerOrder = createCustomerOrder();
-      nextDiv('.order-information-input', '.order-pizza-input');
+      nextDiv('.order-information-input',  '.checked-out');
     });
   
     // event handler for add pizza
